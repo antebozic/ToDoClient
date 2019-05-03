@@ -3,10 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
+    "jwt-decode": "^2.2.0",
+    "moment": "^2.24.0",
+    "npm": "^6.9.0",
     "react": "^16.8.4",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.8.4",
-    "react-scripts": "2.1.8"
+    "react-inlinesvg": "^0.8.4",
+    "react-moment": "^0.8.4",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.8",
+    "react-scroll-up-button": "^1.6.4",
+    "react-svg": "^9.0.2",
+    "react-svg-inline": "^2.1.1",
+    "react-transition-group": "^2.7.1",
+    "redux": "^4.0.1",
+    "redux-delayed-dispatch": "^1.0.0-0",
+    "redux-thunk": "^2.3.0"
   },
+  "proxy": "http://localhost:8081",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

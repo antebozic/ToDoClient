@@ -1,0 +1,197 @@
+.wrapper {
+	/* height: 100%; */
+	min-height: 600px;
+	width: 50rem;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	padding: 5rem;
+	border-radius: 5px;
+}
+
+.wrapper h2 {
+	font-size: 3.5rem;
+	padding-bottom: 5rem;
+}
+.error__wrapper {
+	height: 3rem;
+	margin-bottom: 2rem;
+	display: grid;
+	align-content: center;
+	justify-content: center;
+}
+.error {
+	font-size: 1.5rem;
+	text-align: center;
+}
+.form {
+	opacity: 0;
+	animation: openUp .4s .1s ease-in forwards;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.form__group:not(:last-child) {
+	margin-bottom: 2rem;
+}
+.form__input {
+	font-size: 1.7rem;
+	font-family: inherit;
+	color: inherit;
+	padding: 1.5rem 2rem;
+	border-radius: 2px;
+	background-color: #f2f2f2;
+	border: none;
+	border-bottom: 3px solid transparent;
+	width: 40rem;
+	display: block;
+	transition: all .3s;
+}
+.form__input:focus {
+	outline: none;
+	box-shadow: 0 1rem 2rem rgba(0, 0, 0, .1);
+	border-bottom: 3px solid #78dae1;
+}
+.form__label {
+	font-size: 1.4rem;
+	font-weight: 700;
+	margin-left: 2rem;
+	margin-top: .7rem;
+	display: block;
+	transition: all .3s;
+}
+.form__input:placeholder-shown + .form__label {
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(-4rem);
+}
+/* buttons */
+.form__btn,
+.form__btn:visited,
+.form__btn:link {
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 1.5rem 4rem;
+	display: inline-block;
+	border-radius: 10rem;
+	transition: all .2s;
+	position: relative;
+	font-size: 1.6rem;
+	border: none;
+	cursor: pointer;
+	background-color: #e34132;
+	color: #fff;
+	animation: moveInBottom .5s ease-out .75s;
+	animation-fill-mode: backwards;
+	margin-top: 1rem;
+}
+.form__btn:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+}
+.form__btn:hover .form__btn::after {
+	transform: scaleX(1.4) scaleY(1.6);
+	opacity: 0;
+}
+.form__btn:active,
+.form__btn:focus {
+	outline: none;
+	transform: translateY(-1px);
+	box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+}
+.form__btn::after {
+	content: "";
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	border-radius: 10rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	transition: all .4s;
+	background-color: #e34132;
+}
+.error__wrapper {
+	color: #e34132;
+}
+.btn__simple,
+.btn__simple:link,
+.btn__simple:visited {
+	font-size: 1.2rem;
+	color: #6f6f6f;
+	display: inline-block;
+	text-decoration: none;
+	border-bottom: 1px solid #6f6f6f;
+	padding: 3px;
+	transition: all .4s;
+	position: fixed;
+	right: 2rem;
+	bottom: 2rem;
+}
+.btn__simple:hover {
+	background-color: #6f6f6f;
+	color: #fff;
+	box-shadow: 0 1rem 2rem rgba(0, 0, 0, .15);
+	transform: translateY(-2px);
+}
+
+@keyframes moveInBottom {
+	0% {
+		opacity: 0;
+		transform: translateY(3rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(0);
+	}
+}
+
+@keyframes openUp {
+	100% {
+		opacity: 1;
+	}
+}
+
+/* ReactCSSTransitionGroup */
+.form-enter {
+	opacity: 0.01;
+}
+.form-enter.form-enter-active {
+	opacity: 1;
+	transition: all 500ms ease-in;
+}
+.form-leave {
+	opacity: 1;
+}
+.form-leave.form-leave-active {
+	opacity: 0.01;
+	transition: all 500ms ease-in;
+}
+.form-appear {
+	opacity: 0.01;
+}
+.form-appear.form-appear-active {
+	opacity: 1;
+	transition: all 500ms ease-in;
+}
+
+.closeBtn,
+.closeBtn:link,
+.closeBtn:visited {
+	position: absolute;
+	top: 8px;
+	right: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	font-size: 2.1rem;
+	color: #6f6f6f;
+	font-weight: 200;
+}
